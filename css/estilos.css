@@ -353,7 +353,7 @@
 .regalo {
   padding: 60px 20px;
   text-align: center;
-  background: #fafafa; /* #4682b4 */
+  background: #4682b4; /* #fafafa */
 }
 
 .regalo p {
@@ -430,6 +430,10 @@
   .img-galeria {
     width: 95%;
   }
+
+  .agregar-imagen {
+        width: 95%;
+    }
 
   .dresscode img {
     width: 7em;
