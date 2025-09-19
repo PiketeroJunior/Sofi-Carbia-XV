@@ -42,54 +42,94 @@
 .subtitulo {
   font-size: 6rem;
   margin-bottom: 15px;
-  font-family: "Royalty Free 1", sans-serif;
+  font-family: "Rosellia", sans-serif;
 }
 /*Presentacion*/
 .presentacion {
-  position: relative;
+   /*position: relative;*/
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
+   /*align-items: center;*/
+  /*justify-content: center; */
+   /*text-align: center;*/
+   /*color: #fff;*/
 }
 
-.presentacion .foto-portada {
-  position: absolute;
-  inset: 0;
+.izquierda {
+  position: relative; /* agregado */
+  width: 50%;
+  height: 100%;
+}
+
+.izquierda .foto-portada {
+   /*position: absolute;*/
+   /*inset: 0;*/
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+   /*z-index: -1;*/
 }
 
-.presentacion::after {
+/*.presentacion::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.4);
   z-index: 0;
-}
+}*/
 
-.texto-portada {
-  position: relative;
-  z-index: 1;
+/*antes texto portada ahora derecha*/ 
+.derecha {     
+  /* position: relative;  */ /* alt + shift + a comenta el codigo */
+  /* z-index: 1; */  /* o si no ctrl + k + c pero con el mouse */
+  width: 50%;
+  background-color: #4682b4; /* o navy */
+  color: #222; /* o #fff */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
 }
-
-.texto-portada h1 {
+/* antes texto portada ahora cont-derecha */
+.cont-derecha h1 {
   font-size: 4rem;
   margin-bottom: 10px;
+  font-family: 'Rosellia', sans-serif;
 }
 
-.texto-portada .frase {
-  font-size: 1.5rem;
+.cont-derecha .frase {
+  font-size: 3.5rem;
   margin-bottom: 10px;
+  font-family: 'Valestine', sans-serif;
 }
 
-.texto-portada .fecha {
-  font-size: 1.4rem;
+.cont-derecha .fecha {
+  font-size: 2.4rem;
   font-style: italic;
+  font-family: 'Rosellia', sans-serif;
+}
+
+.imgDeco {
+  width: 250px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.nombre {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  transform: translateY(-50%);
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.nombre h2 {
+  font-family: 'Royalty Free 2';
+  font-size: 3.5rem;
+  margin: 0;
 }
 /*Lugar*/
 .lugar {
@@ -116,8 +156,8 @@
   display: inline-block;
   margin-top: 15px;
   padding: 10px 25px;
-  background: #f1c6d3;
-  color: #333;
+  background: #4682b4;
+  color: #222;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
@@ -127,10 +167,10 @@
 }
 
 .lugar .btn:hover {
-  background: #e09bb1;
+  background: #5a94c9;
   transform: scale(1.05);
 }
-/*Contador*/
+
 /* Contador */
 .contador {
   padding: 60px 20px;
@@ -150,8 +190,8 @@
 }
 
 .tiempo {
-  background: #f1c6d3;
-  color: #333;
+  background: #4682b4;
+  color: #222;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -166,7 +206,7 @@
 
 .tiempo:hover {
   transform: scale(1.05);
-  background: #e09bb1;
+  background: #5a94c9;
 }
 
 .tiempo span {
@@ -198,8 +238,8 @@
   display: inline-block;
   margin-top: 15px;
   padding: 10px 25px;
-  background: #f1c6d3;
-  color: #333;
+  background: #4682b4;
+  color: #222;
   text-decoration: none;
   font-weight: bold;
   transition: transform 0.3s ease;
@@ -207,7 +247,7 @@
 }
 
 .btn-confirmar:hover {
-  background: #e09bb1;
+  background: #5a94c9;
   transform: scale(1.05);
 }
 /* Dresscode */
@@ -238,6 +278,7 @@
   gap: 10px;
   margin-top: 20px;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .img-galeria {
@@ -312,7 +353,7 @@
 .regalo {
   padding: 60px 20px;
   text-align: center;
-  background: #fafafa;
+  background: #fafafa; /* #4682b4 */
 }
 
 .regalo p {
@@ -323,8 +364,75 @@
 .alias {
   font-weight: bold;
   font-size: 1.5rem;
-  color: #444;
+  color: #222;
   margin-top: 15px;
 }
 
+
+@media (max-width: 768px) {
+  .presentacion {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .izquierda {      /* antes izquierda y der con width 100% y height auto */
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .izquierda .foto-portada {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+
+  .derecha {
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+    padding: 40px 20px;
+  }
+
+  .cont-derecha .frase {
+    font-size: 3em;
+  }
+
+  .contador {
+        padding: 40px 10px; /* Reduce el padding para pantallas pequeñas */
+  }
+
+  .countdown {
+        gap: 10px; /* Reduce el espacio entre los círculos */
+        margin: 20px 0; /* Reduce el margen superior e inferior */
+  }
+
+  .tiempo {
+        width: 70px; /* Reduce el tamaño de los círculos */
+        height: 70px; /* Reduce la altura de los círculos */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Reduce la sombra */
+  }
+
+  .tiempo span {
+        font-size: 1.4rem; /* Reduce el tamaño de los números */
+  }
+
+  .tiempo small {
+        font-size: 0.7rem; /* Reduce el tamaño de la palabra (Días, Horas, etc.) */
+  }
+
+  .subtitulo {
+    font-size: 4.5em;
+  }
+
+  .img-galeria {
+    width: 95%;
+  }
+
+  .dresscode img {
+    width: 7em;
+  }
+}
 
