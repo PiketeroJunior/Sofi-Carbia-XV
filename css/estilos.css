@@ -368,6 +368,25 @@
   margin-top: 15px;
 }
 
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+footer a.footer-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+footer a.footer-link:hover {
+  color: #4682b4;
+}
 
 @media (max-width: 768px) {
   .presentacion {
